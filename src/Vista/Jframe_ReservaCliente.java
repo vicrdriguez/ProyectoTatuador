@@ -4,6 +4,9 @@
  */
 package Vista;
 
+import Modelo.Cliente;
+import java.util.Date;
+
 /**
  *
  * @author Vicente
@@ -38,7 +41,7 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         Jtxt_Apellido = new javax.swing.JTextField();
         Jtxt_nombre = new javax.swing.JTextField();
-        Jtxt_dia = new javax.swing.JTextField();
+        Jtxt_rut = new javax.swing.JTextField();
         Jbtn_Atras = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -79,7 +82,7 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
 
         jLabel3.setText("Apellido");
 
-        jLabel4.setText("Dia");
+        jLabel4.setText("rut");
 
         jLabel5.setText("Hora");
 
@@ -90,9 +93,9 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
             }
         });
 
-        Jtxt_dia.addActionListener(new java.awt.event.ActionListener() {
+        Jtxt_rut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Jtxt_diaActionPerformed(evt);
+                Jtxt_rutActionPerformed(evt);
             }
         });
 
@@ -125,7 +128,7 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Jtxt_nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
-                            .addComponent(Jtxt_dia))
+                            .addComponent(Jtxt_rut))
                         .addGap(27, 27, 27)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -156,7 +159,7 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(jLabel5)
-                            .addComponent(Jtxt_dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Jtxt_rut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(32, 32, 32)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -172,13 +175,28 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Jtxt_nombreActionPerformed
 
-    private void Jtxt_diaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jtxt_diaActionPerformed
+    private void Jtxt_rutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jtxt_rutActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Jtxt_diaActionPerformed
+    }//GEN-LAST:event_Jtxt_rutActionPerformed
 
     private void Jbtn_AtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jbtn_AtrasActionPerformed
         // TODO add your handling code here:
+             
+        //capturar datos
         
+        String Nombre,Apellido,rut,fechaStr;
+        
+        Nombre = this.Jtxt_nombre.getText();
+        Apellido = this.Jtxt_Apellido.getText();
+        rut = this.Jtxt_rut.getText();
+
+        
+ 
+        Cliente cliente = new Cliente(Nombre, Apellido, rut);
+        Registro reg = new Registro();
+        reg.agregar(libro);
+        JOptionPane.showMessageDialog(null, "Ingreso Libro exitoso!", "Ingreso", 1);
+         
     }//GEN-LAST:event_Jbtn_AtrasActionPerformed
 
     /**
@@ -219,8 +237,8 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Jbtn_Atras;
     private javax.swing.JTextField Jtxt_Apellido;
-    private javax.swing.JTextField Jtxt_dia;
     private javax.swing.JTextField Jtxt_nombre;
+    private javax.swing.JTextField Jtxt_rut;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
