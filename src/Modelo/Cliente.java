@@ -6,7 +6,7 @@ package Modelo;
  * @author Vicente, Kevin
  */
 public class Cliente {
-    
+    //ojo q uno es num y otro nom, no se vayan a confundir
     private int num_cliente;
     private String rut_cliente, nom_cliente, ap_cliente;
     private String fono_cliente, correo_cliente;
@@ -71,10 +71,8 @@ public class Cliente {
         this.correo_cliente = correo_cliente;
     }
     
-    /*
     @Override
     public String toString() {
         return "Cliente{" + "num_cliente=" + num_cliente + ", rut_cliente=" + rut_cliente + ", nom_cliente=" + nom_cliente + ", ap_cliente=" + ap_cliente + ", fono_cliente=" + fono_cliente + ", correo_cliente=" + correo_cliente + '}';
     }
-    */
 }

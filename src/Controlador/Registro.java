@@ -1,8 +1,10 @@
 
 package Controlador;
 
-
-
+import Modelo.Cliente;
+import ConexionBD.Conexion;
+import java.sql.Connection;
+/*
 import ConexionBD.Conexion;
 import Modelo.Cliente;
 import java.sql.Connection;
@@ -11,13 +13,25 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.sql.ResultSet;
+*/
 
 /**
  *
- * @author USRVI-LC2
+ * @author Ignacio, Kevin
  */
 public class Registro { //vamos hacer el CRUD
     
+    public boolean agregarCliente(Cliente cli)
+    {
+        try {
+            Conexion con = new Conexion();
+            Connection cnx = con.obtenerConexion();
+            
+            String query = "";
+        } catch (Exception e) {
+        }
+    }
+    /*
     public boolean agregar(Cliente cliente)
     {
         try {
@@ -51,6 +65,7 @@ public class Registro { //vamos hacer el CRUD
             System.out.println("Error en el método agregar cliente " + e.getMessage());
             return false;
         }
+        
     }
-    
+    */
 }
