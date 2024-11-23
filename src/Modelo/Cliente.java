@@ -1,74 +1,68 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package Modelo;
 
-import java.util.Date;
+package Modelo;
 
 /**
  *
- * @author Vicente
+ * @author Vicente, Kevin
  */
 public class Cliente {
-    public String nombre;
-    public String Apellido;
-    public String rut;
-    public Date diaAgendar;
+    
+    private String rut_cliente, nom_cliente, ap_cliente;
+    private String fono_cliente, correo_cliente;
 
     public Cliente() {
     }
 
-    public Cliente(String nombre, String Apellido, String rut, Date diaAgendar) {
-        this.nombre = nombre;
-        this.Apellido = Apellido;
-        this.rut = rut;
-        this.diaAgendar = diaAgendar;
+    public Cliente(String rut_cliente, String nom_cliente, String ap_cliente, String fono_cliente, String correo_cliente) {
+        this.rut_cliente = rut_cliente;
+        this.nom_cliente = nom_cliente;
+        this.ap_cliente = ap_cliente;
+        this.fono_cliente = fono_cliente;
+        this.correo_cliente = correo_cliente;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getRut_cliente() {
+        return rut_cliente;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setRut_cliente(String rut_cliente) {
+        this.rut_cliente = rut_cliente;
     }
 
-    public String getApellido() {
-        return Apellido;
+    public String getNom_cliente() {
+        return nom_cliente;
     }
 
-    public void setApellido(String Apellido) {
-        this.Apellido = Apellido;
+    public void setNom_cliente(String nom_cliente) {
+        this.nom_cliente = nom_cliente;
     }
 
-    public String getRut() {
-        return rut;
+    public String getAp_cliente() {
+        return ap_cliente;
     }
 
-    public void setRut(String rut) {
-        this.rut = rut;
+    public void setAp_cliente(String ap_cliente) {
+        this.ap_cliente = ap_cliente;
     }
 
-    public Date getDiaAgendar() {
-        return diaAgendar;
+    public String getFono_cliente() {
+        return fono_cliente;
     }
 
-    public void setDiaAgendar(Date diaAgendar) {
-        this.diaAgendar = diaAgendar;
+    public void setFono_cliente(String fono_cliente) {
+        this.fono_cliente = fono_cliente;
+    }
+
+    public String getCorreo_cliente() {
+        return correo_cliente;
+    }
+
+    public void setCorreo_cliente(String correo_cliente) {
+        this.correo_cliente = correo_cliente;
     }
 
     @Override
     public String toString() {
-        return "Cliente{" + "nombre=" + nombre + ", Apellido=" + Apellido + ", rut=" + rut + ", diaAgendar=" + diaAgendar + '}';
+        return "Cliente{" + "rut_cliente=" + rut_cliente + ", nom_cliente=" + nom_cliente + ", ap_cliente=" + ap_cliente + ", fono_cliente=" + fono_cliente + ", correo_cliente=" + correo_cliente + '}';
     }
-
-
-       
-    
-    
-    
-    
-    
-    
 }
