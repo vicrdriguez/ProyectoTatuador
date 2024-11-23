@@ -71,4 +71,6 @@ public class Reserva {
         return "Reserva{" + "id_reserva=" + id_reserva + ", fecha=" + fecha + ", hora=" + hora + ", cliente=" + cliente + ", tatuador=" + tatuador + '}';
     }
     */
+    
+    //metodos para acceder a los atributos de cliente o tatuador a traves de los objetos
 }

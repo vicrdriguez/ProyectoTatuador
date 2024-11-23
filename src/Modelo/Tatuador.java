@@ -10,6 +10,7 @@ package Modelo;
  */
 public class Tatuador {
     
+    private int num_tatuador;
     private String rut_tatuador, nom_tatuador, ap_tatuador;
     private String correo_tatuador, fono_tatuador;
     private boolean disponibilidad;
@@ -17,13 +18,22 @@ public class Tatuador {
     public Tatuador() {
     }
 
-    public Tatuador(String rut_tatuador, String nom_tatuador, String ap_tatuador, String correo_tatuador, String fono_tatuador, boolean disponibilidad) {
+    public Tatuador(int num_tatuador, String rut_tatuador, String nom_tatuador, String ap_tatuador, String correo_tatuador, String fono_tatuador, boolean disponibilidad) {
+        this.num_tatuador = num_tatuador;
         this.rut_tatuador = rut_tatuador;
         this.nom_tatuador = nom_tatuador;
         this.ap_tatuador = ap_tatuador;
         this.correo_tatuador = correo_tatuador;
         this.fono_tatuador = fono_tatuador;
         this.disponibilidad = disponibilidad;
+    }
+
+    public int getNum_tatuador() {
+        return num_tatuador;
+    }
+
+    public void setNum_tatuador(int num_tatuador) {
+        this.num_tatuador = num_tatuador;
     }
 
     public String getRut_tatuador() {
@@ -77,7 +87,7 @@ public class Tatuador {
     /*
     @Override
     public String toString() {
-        return "Tatuador{" + "rut_tatuador=" + rut_tatuador + ", nom_tatuador=" + nom_tatuador + ", ap_tatuador=" + ap_tatuador + ", correo_tatuador=" + correo_tatuador + ", fono_tatuador=" + fono_tatuador + ", disponibilidad=" + disponibilidad + '}';
+        return "Tatuador{" + "num_tatuador=" + num_tatuador + ", rut_tatuador=" + rut_tatuador + ", nom_tatuador=" + nom_tatuador + ", ap_tatuador=" + ap_tatuador + ", correo_tatuador=" + correo_tatuador + ", fono_tatuador=" + fono_tatuador + ", disponibilidad=" + disponibilidad + '}';
     }
-    */
+    */  
 }

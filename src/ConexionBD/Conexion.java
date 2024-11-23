@@ -1,10 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ConexionBD;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 /**
  *
@@ -12,6 +10,8 @@ import java.sql.DriverManager;
  */
 public class Conexion {
     
+    //jdbc:mysql://localhost:3306/ProyectoTatuador
+    //es el mismo para todos, da igual estemos en distintas PC
     public Connection obtenerConexion()
     {
         Connection conexion = null;
@@ -19,15 +19,15 @@ public class Conexion {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
-            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "#IGGN.KVv18");
-            System.out.println("Conexion exitosa");
-        } catch (Exception e) {
-            System.out.println("Fallo conexión con Servidor");
-        }
-        
+            //el nombre de la URL es ProyectoTatuador porque a la hora de crear el MySQL,
+            //deben ponerle asi y hacer las tablas tal cual indica
+            //la clave varia dependiendo el usuario del proyecto
+            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/ProyectoTatuador", "root", "duocuc");
+            System.out.println("Conexion exitosa!!");
+            
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println("Error en la clase conexión con Servidor" + e.getMessage());
+        } 
         return conexion;
     }
-    }
-
-    
-
+}
