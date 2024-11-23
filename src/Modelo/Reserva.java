@@ -65,12 +65,10 @@ public class Reserva {
         this.tatuador = tatuador;
     }
     
-    /*
     @Override
     public String toString() {
         return "Reserva{" + "id_reserva=" + id_reserva + ", fecha=" + fecha + ", hora=" + hora + ", cliente=" + cliente + ", tatuador=" + tatuador + '}';
     }
-    */
     
     //metodos para acceder a los atributos de cliente o tatuador a traves de los objetos
 }

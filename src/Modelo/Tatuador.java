@@ -83,11 +83,9 @@ public class Tatuador {
     public void setDisponibilidad(boolean disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
-    
-    /*
+
     @Override
     public String toString() {
         return "Tatuador{" + "num_tatuador=" + num_tatuador + ", rut_tatuador=" + rut_tatuador + ", nom_tatuador=" + nom_tatuador + ", ap_tatuador=" + ap_tatuador + ", correo_tatuador=" + correo_tatuador + ", fono_tatuador=" + fono_tatuador + ", disponibilidad=" + disponibilidad + '}';
     }
-    */  
 }
