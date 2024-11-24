@@ -21,13 +21,14 @@ public class Registro { //vamos hacer el CRUD
             Connection cnx = con.obtenerConexion();
             
             //Consulta de base de dato
-            String consulta = "INSERT INTO Cliente(rut_cliente, nom_cliente, ap_cliente, fono_cliente, correo_cliente) VALUES(?,?,?,?,?);";
+            String consulta = "INSERT INTO Cliente(rut_cliente, nom_cliente, ap_cliente, fono_cliente, correo_cliente, fecha) VALUES(?,?,?,?,?);";
             PreparedStatement stmt = cnx.prepareStatement(consulta);
             stmt.setString(1, cli.getRut_cliente());
             stmt.setString(2, cli.getNom_cliente());
             stmt.setString(3, cli.getAp_cliente());
             stmt.setInt(4, cli.getFono_cliente());
             stmt.setString(5, cli.getCorreo_cliente());
+            
             
             stmt.executeUpdate(); //el update cambia el estado de la tabla
             stmt.close(); // cierras el camino
