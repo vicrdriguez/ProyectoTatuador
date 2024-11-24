@@ -15,6 +15,9 @@ public class Jframe_Menu extends javax.swing.JFrame {
      */
     public Jframe_Menu() {
         initComponents();
+        setSize(900, 600);
+        setResizable(false);
+        setLocationRelativeTo(null);
     }
 
     /**

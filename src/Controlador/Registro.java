@@ -6,6 +6,9 @@ import ConexionBD.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.sql.ResultSet;
 
 /**
  *
@@ -38,6 +41,41 @@ public class Registro { //vamos hacer el CRUD
             System.out.println("Error en la consulta SQL para insertar datos" + e.getMessage());
             return false;
         }
+    }
+    
+    public ArrayList<Cliente> ListarCliente()
+    {
+        ArrayList<Cliente> lista = new ArrayList<>();
+        
+        try {
+            Conexion con = new Conexion();
+            Connection cnx = con.obtenerConexion();
+            
+            String query = "SELECT * FROM proyectotatuador.cliente;";
+            PreparedStatement stmt = cnx.prepareCall(query);
+            
+            ResultSet rs = stmt.executeQuery();
+            
+            while (rs.next()){
+                Cliente cli = new Cliente();
+                cli.setNum_cliente(rs.getInt("num_cliente"));
+                cli.setNom_cliente(rs.getString("nom_cliente"));
+                cli.setAp_cliente(rs.getString("ap_cliente"));
+                cli.setRut_cliente(rs.getString("rut_cliente"));
+                cli.setFono_cliente(rs.getInt("fono_cliente"));
+                cli.setCorreo_cliente(rs.getString("correo_cliente"));
+                
+                lista.add(cli);
+            }
+            rs.close();
+            stmt.close();
+            cnx.close();
+            
+        } catch (SQLException e) {
+            System.out.println("Error en la consulta SQL para revisar las reservas" + e.getMessage());
+        }
+        return lista;
+        
     }
     /*
     public boolean agregar(Cliente cliente)
