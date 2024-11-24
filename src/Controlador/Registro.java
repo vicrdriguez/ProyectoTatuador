@@ -4,16 +4,8 @@ package Controlador;
 import Modelo.Cliente;
 import ConexionBD.Conexion;
 import java.sql.Connection;
-/*
-import ConexionBD.Conexion;
-import Modelo.Cliente;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.sql.ResultSet;
-*/
 
 /**
  *
@@ -27,8 +19,22 @@ public class Registro { //vamos hacer el CRUD
             Conexion con = new Conexion();
             Connection cnx = con.obtenerConexion();
             
-            String query = "";
-        } catch (Exception e) {
+            String query = "INSERT INTO Cliente(rut_cliente, nom_cliente, ap_cliente, fono_cliente, correo_cliente) VALUES(?,?,?,?,?);";
+            PreparedStatement stmt = cnx.prepareStatement(query);
+            stmt.setString(1, cli.getRut_cliente());
+            stmt.setString(2, cli.getNom_cliente());
+            stmt.setString(3, cli.getAp_cliente());
+            stmt.setInt(4, cli.getFono_cliente());
+            stmt.setString(5, cli.getCorreo_cliente());
+            
+            stmt.executeUpdate(); //el update cambia el estado de la tabla
+            stmt.close(); // cierras el camino
+            cnx.close();
+            
+            return true;
+        } catch (SQLException e) {
+            System.out.println("Error en la consulta SQL para insertar datos" + e.getMessage());
+            return false;
         }
     }
     /*
