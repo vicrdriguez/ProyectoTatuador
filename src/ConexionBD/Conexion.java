@@ -22,7 +22,7 @@ public class Conexion {
             //el nombre de la URL es ProyectoTatuador porque a la hora de crear el MySQL,
             //deben ponerle asi y hacer las tablas tal cual indica
             //la clave varia dependiendo el usuario del proyecto
-            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/ProyectoTatuador", "root", "duocuc");
+            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/ProyectoTatuador", "root", "duocuc.2024");
             System.out.println("Conexion exitosa!!");
             
         } catch (ClassNotFoundException | SQLException e) {

@@ -13,14 +13,16 @@ import java.sql.SQLException;
  */
 public class Registro { //vamos hacer el CRUD
     
+    
     public boolean agregarCliente(Cliente cli)
     {
         try {
             Conexion con = new Conexion();
             Connection cnx = con.obtenerConexion();
             
-            String query = "INSERT INTO Cliente(rut_cliente, nom_cliente, ap_cliente, fono_cliente, correo_cliente) VALUES(?,?,?,?,?);";
-            PreparedStatement stmt = cnx.prepareStatement(query);
+            //Consulta de base de dato
+            String consulta = "INSERT INTO Cliente(rut_cliente, nom_cliente, ap_cliente, fono_cliente, correo_cliente) VALUES(?,?,?,?,?);";
+            PreparedStatement stmt = cnx.prepareStatement(consulta);
             stmt.setString(1, cli.getRut_cliente());
             stmt.setString(2, cli.getNom_cliente());
             stmt.setString(3, cli.getAp_cliente());
