@@ -74,44 +74,33 @@ public class Registro { //vamos hacer el CRUD
         } catch (SQLException e) {
             System.out.println("Error en la consulta SQL para revisar las reservas" + e.getMessage());
         }
-        return lista;
-        
+        return lista;   
     }
-    /*
-    public boolean agregar(Cliente cliente)
+    
+    public boolean eliminarCliente(int num_cliente)
     {
         try {
-            Date date;
-            
             Conexion con = new Conexion();
             Connection cnx = con.obtenerConexion();
-            
-            date = cliente.getDiaAgendar();
-            //SQL
-            String query = "INSERT INTO Cliente(nombre,apellido,rut,diaAgendar) VALUES(?,?,?,?)";
-            PreparedStatement stmt = cnx.prepareStatement(query);
-            
-            //ahora le diremos los ?,?,?,?,?
-            stmt.setString(1, cliente.getNombre());
-            stmt.setString(2, cliente.getApellido());
-            stmt.setString(3,cliente.getRut());
-            stmt.setDate(4, new java.sql.Date(date.getTime()));
 
-            
+            String query = "DELETE FROM proyectoTatuador.Cliente WHERE num_cliente=?";
+            PreparedStatement stmt = cnx.prepareStatement(query);
+
+            stmt.setInt(1, num_cliente);
+
             stmt.executeUpdate();
             stmt.close();
-            cnx.close();
-            
+            cnx.close(); 
+
             return true;
+            
         } catch (SQLException e) {
-            System.out.println("Error en SQL al agregar cliente " + e.getMessage());
-            return false;
+            System.out.println("Error en SQL al cancelar reserva" + e.getMessage());
+            return false; 
         }
-        catch(Exception e){
-            System.out.println("Error en el método agregar cliente " + e.getMessage());
-            return false;
+        catch (Exception e) {
+            System.out.println("Error en el metodo cancelar reserva" + e.getMessage());  
+            return false; 
         }
-        
-    }
-    */
+    }   
 }

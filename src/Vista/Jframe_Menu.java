@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Vista;
 
 /**
@@ -31,12 +28,12 @@ public class Jframe_Menu extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jmn_menu = new javax.swing.JMenu();
+        jmn_reservarCliente = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        jmn_eliminarReserva = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,15 +47,15 @@ public class Jframe_Menu extends javax.swing.JFrame {
         jMenuBar1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenuBar1.setAlignmentX(0.3F);
 
-        jMenu1.setText("Menu");
+        jmn_menu.setText("Menu");
 
-        jMenuItem1.setText("Reservar cliente");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        jmn_reservarCliente.setText("Reservar cliente");
+        jmn_reservarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                jmn_reservarClienteActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jmn_menu.add(jmn_reservarCliente);
 
         jMenuItem2.setText("Modificar reserva");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -66,23 +63,28 @@ public class Jframe_Menu extends javax.swing.JFrame {
                 jMenuItem2ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        jmn_menu.add(jMenuItem2);
 
         jMenuItem4.setText("Listar reserva");
-        jMenu1.add(jMenuItem4);
+        jmn_menu.add(jMenuItem4);
 
         jMenuItem5.setText("Modificar perfil");
-        jMenu1.add(jMenuItem5);
-
-        jMenuItem3.setText("Eliminar reserva");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                jMenuItem5ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        jmn_menu.add(jMenuItem5);
 
-        jMenuBar1.add(jMenu1);
+        jmn_eliminarReserva.setText("Eliminar reserva");
+        jmn_eliminarReserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmn_eliminarReservaActionPerformed(evt);
+            }
+        });
+        jmn_menu.add(jmn_eliminarReserva);
+
+        jMenuBar1.add(jmn_menu);
 
         setJMenuBar(jMenuBar1);
 
@@ -106,26 +108,32 @@ public class Jframe_Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void jmn_reservarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmn_reservarClienteActionPerformed
         //  boton de Panel de reserva cliente
         
         Jframe_ReservaCliente reserva = new Jframe_ReservaCliente();
         reserva.setVisible(true);
         
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_jmn_reservarClienteActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    private void jmn_eliminarReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmn_eliminarReservaActionPerformed
+        // codigo para eliminar al sacowea ctm  q cancela la wea a ultima hora
+        Jframe_EliminarCliente eliminar = new Jframe_EliminarCliente(); // importante q J y _(letra)en mayus
+        eliminar.setVisible(true);
+    }//GEN-LAST:event_jmn_eliminarReservaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,12 +172,12 @@ public class Jframe_Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jmn_eliminarReserva;
+    private javax.swing.JMenu jmn_menu;
+    private javax.swing.JMenuItem jmn_reservarCliente;
     // End of variables declaration//GEN-END:variables
 }
