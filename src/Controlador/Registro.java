@@ -3,6 +3,7 @@ package Controlador;
 
 import Modelo.Cliente;
 import ConexionBD.Conexion;
+import Modelo.Tatuador;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -102,5 +103,30 @@ public class Registro { //vamos hacer el CRUD
             System.out.println("Error en el metodo cancelar reserva" + e.getMessage());  
             return false; 
         }
-    }   
+    }  
+    public boolean AgregarTatuador(Tatuador tatuador)
+    {
+        try {
+            Conexion con = new Conexion();
+            Connection cnx = con.obtenerConexion();
+            
+            //Consulta de base de dato
+            String consulta = "INSERT INTO Tatuador(rut_Tatuador, nom_tatuador, ap_tatuador, correo_tatuador, fono_tatuador) VALUES(?,?,?,?,?);";
+            PreparedStatement stmt = cnx.prepareStatement(consulta);
+            stmt.setString(1, tatuador.getRut_tatuador());
+            stmt.setString(2, tatuador.getNom_tatuador());
+            stmt.setString(3, tatuador.getAp_tatuador());
+            stmt.setString(4, tatuador.getCorreo_tatuador());
+            stmt.setInt(5, tatuador.getFono_tatuador());
+            
+            stmt.executeUpdate(); //el update cambia el estado de la tabla
+            stmt.close(); // cierras el camino
+            cnx.close();
+            
+            return true;
+        } catch (SQLException e) {
+            System.out.println("Error en la consulta SQL para insertar datos" + e.getMessage());
+            return false;
+        }
+    }
 }
