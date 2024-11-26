@@ -78,14 +78,11 @@ public class Registro { //vamos hacer el CRUD
         return lista;   
     }
     
-
     public boolean eliminarCliente(String rut_cliente)
-
     {
         try {
             Conexion con = new Conexion();
             Connection cnx = con.obtenerConexion();
-
 
             String query = "DELETE FROM proyectoTatuador.Cliente WHERE rut_cliente=?";
             PreparedStatement stmt = cnx.prepareStatement(query);
@@ -106,12 +103,8 @@ public class Registro { //vamos hacer el CRUD
             System.out.println("Error en el metodo cancelar reserva" + e.getMessage());  
             return false; 
         }
-
     }    
        
-
-    }
-
     public boolean AgregarTatuador(Tatuador tatuador)
     {
         try {
@@ -137,6 +130,7 @@ public class Registro { //vamos hacer el CRUD
             return false;
         }
     }
+    
     public boolean EliminarTatuador(String rut_tatuador)
     {
         try {
@@ -157,5 +151,31 @@ public class Registro { //vamos hacer el CRUD
             return false;
         }
     }
+    
+    public Cliente buscarCliente(String rut_cliente)
+    {
+        Cliente cli = new Cliente();
+        ArrayList<Cliente> lista = new ArrayList<>();
+        try {
+            Conexion con = new Conexion();
+            Connection cnx = con.obtenerConexion();
 
+            String query = "SELECT FROM * Cliente WHERE rut_cliente=?";
+            PreparedStatement stmt = cnx.prepareStatement(query);
+            stmt.setString(1, rut_cliente);
+
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                cli.setRut_cliente(rs.getString("rut_cliente"));
+            }
+            
+            rs.close();
+            stmt.close();
+            cnx.close();
+        } catch (SQLException e) {
+            System.out.println("Error en SQL al buscar cliente por el rut" + e.getMessage());
+        }
+        return cli;
+    }
 }
