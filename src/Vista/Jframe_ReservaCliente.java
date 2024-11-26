@@ -4,13 +4,21 @@
  */
 package Vista;
 
+import ConexionBD.Conexion;
 import Controlador.Registro;
 import Modelo.Cliente;
+import Modelo.Tatuador;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.SQLException;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -26,6 +34,7 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
         setSize(796, 543);
         setResizable(true);
         setLocationRelativeTo(null);
+        cargarCombo(jcbox_tatuadores);
     }
 
     /**
@@ -53,6 +62,8 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         Jtxt_correo = new javax.swing.JTextField();
         Jbtn_guardar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jcbox_tatuadores = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         Jbtn_Eliminar_cita = new javax.swing.JButton();
         Jbtn_Regresar_menu = new javax.swing.JButton();
@@ -126,6 +137,16 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setText("Seleccione Tatuador: ");
+
+        jcbox_tatuadores.setToolTipText("");
+        jcbox_tatuadores.setName(""); // NOI18N
+        jcbox_tatuadores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbox_tatuadoresActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -152,9 +173,13 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(Jtxt_Fono, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Jtxt_correo, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Jtxt_correo, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jcbox_tatuadores, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(59, 59, 59)
                         .addComponent(Jbtn_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -183,6 +208,10 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(Jtxt_correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jcbox_tatuadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Jbtn_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -303,7 +332,7 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(53, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -419,6 +448,34 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
         reserva.setVisible(false);
     }//GEN-LAST:event_Jbtn_Regresar_menuActionPerformed
 
+    private void jcbox_tatuadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbox_tatuadoresActionPerformed
+         //TODO add your handling code here:
+         
+        try {
+            Conexion con = new Conexion();
+            Connection cnx = con.obtenerConexion();
+            
+            jcbox_tatuadores.removeAllItems(); //remover items 
+            DefaultComboBoxModel tatuadores = new DefaultComboBoxModel();
+            String consulta = "SELECT nom_tatuador FROM proyectoTatuador.Tatuador WHERE disponible = true";
+            PreparedStatement stmt = cnx.prepareStatement(consulta);
+            
+            ResultSet rs = stmt.executeQuery();
+            
+            while (rs.next()){
+                jcbox_tatuadores.addItem(rs.getString(consulta));
+            }
+            rs.close();
+            stmt.close();
+            cnx.close();
+            
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al cargar tatuadores", "Error Tautadores", 1);
+        }
+//        
+//
+    }//GEN-LAST:event_jcbox_tatuadoresActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -468,6 +525,7 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -478,6 +536,38 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbtn_actualizar;
+    private javax.swing.JComboBox<String> jcbox_tatuadores;
     private javax.swing.JTable jtbl_listarClientes;
     // End of variables declaration//GEN-END:variables
-}
+
+    private void cargarCombo(JComboBox c) {
+        DefaultComboBoxModel combo = new DefaultComboBoxModel();
+        Registro reg = new Registro();
+        c.setModel(combo);
+        try {
+            Conexion con = new Conexion();
+            Connection cnx = con.obtenerConexion();
+            
+            String consulta = "SELECT nom_tatuador FROM proyectoTatuador.Tatuador WHERE disponible = true";
+            PreparedStatement stmt = cnx.prepareStatement(consulta);
+            
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()){
+                Tatuador tat = new Tatuador();
+                tat.setNom_tatuador(rs.getString(1));
+                reg.ListarTatuador(tat);
+                combo.addElement(tat.getNom_tatuador());
+                System.out.println("Tatuador agregado con éxito a las opciones");
+            }
+            rs.close();
+            stmt.close();
+            cnx.close();
+            
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al cargar tatuadores", "Error Tautadores", 1);
+        }            
+        
+        }
+        
+    }
+
