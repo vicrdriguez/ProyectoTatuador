@@ -9,12 +9,13 @@ public class Cliente {
     //ojo q uno es num y otro nom, no se vayan a confundir
     private int num_cliente;
     private String rut_cliente, nom_cliente, ap_cliente;
-    private String fono_cliente, correo_cliente;
+    private int fono_cliente;
+    private String correo_cliente;
 
     public Cliente() {
     }
 
-    public Cliente(int num_cliente, String rut_cliente, String nom_cliente, String ap_cliente, String fono_cliente, String correo_cliente) {
+    public Cliente(int num_cliente, String rut_cliente, String nom_cliente, String ap_cliente, int fono_cliente, String correo_cliente) {
         this.num_cliente = num_cliente;
         this.rut_cliente = rut_cliente;
         this.nom_cliente = nom_cliente;
@@ -55,11 +56,11 @@ public class Cliente {
         this.ap_cliente = ap_cliente;
     }
 
-    public String getFono_cliente() {
+    public int getFono_cliente() {
         return fono_cliente;
     }
 
-    public void setFono_cliente(String fono_cliente) {
+    public void setFono_cliente(int fono_cliente) {
         this.fono_cliente = fono_cliente;
     }
 
@@ -70,7 +71,7 @@ public class Cliente {
     public void setCorreo_cliente(String correo_cliente) {
         this.correo_cliente = correo_cliente;
     }
-    
+
     @Override
     public String toString() {
         return "Cliente{" + "num_cliente=" + num_cliente + ", rut_cliente=" + rut_cliente + ", nom_cliente=" + nom_cliente + ", ap_cliente=" + ap_cliente + ", fono_cliente=" + fono_cliente + ", correo_cliente=" + correo_cliente + '}';

@@ -1,24 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Modelo;
 
 /**
  *
- * @author PC
+ * @author Kevin
  */
 public class Tatuador {
     
     private int num_tatuador;
     private String rut_tatuador, nom_tatuador, ap_tatuador;
-    private String correo_tatuador, fono_tatuador;
+    private String correo_tatuador;
+    private int fono_tatuador;
     private boolean disponibilidad;
 
     public Tatuador() {
     }
 
-    public Tatuador(int num_tatuador, String rut_tatuador, String nom_tatuador, String ap_tatuador, String correo_tatuador, String fono_tatuador, boolean disponibilidad) {
+    public Tatuador(int num_tatuador, String rut_tatuador, String nom_tatuador, String ap_tatuador, String correo_tatuador, int fono_tatuador, boolean disponibilidad) {
         this.num_tatuador = num_tatuador;
         this.rut_tatuador = rut_tatuador;
         this.nom_tatuador = nom_tatuador;
@@ -68,11 +66,11 @@ public class Tatuador {
         this.correo_tatuador = correo_tatuador;
     }
 
-    public String getFono_tatuador() {
+    public int getFono_tatuador() {
         return fono_tatuador;
     }
 
-    public void setFono_tatuador(String fono_tatuador) {
+    public void setFono_tatuador(int fono_tatuador) {
         this.fono_tatuador = fono_tatuador;
     }
 
