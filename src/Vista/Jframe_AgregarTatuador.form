@@ -38,17 +38,20 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="Jtxt_disponibilidadTatuador" pref="212" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="Jtxt_nombre_tatuador" pref="212" max="32767" attributes="0"/>
-                      <Component id="Jtxt_rut_tatuador" max="32767" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="Jbtn_guardar_Tatuador" min="-2" max="-2" attributes="0"/>
+                  <Component id="Jtxt_nombre_tatuador" pref="212" max="32767" attributes="0"/>
+                  <Component id="Jtxt_rut_tatuador" max="32767" attributes="0"/>
+                  <Component id="Jtxt_ApellidoTatuador" alignment="0" max="32767" attributes="0"/>
+                  <Component id="Jtxt_correoTaTUADOR" alignment="0" max="32767" attributes="0"/>
+                  <Component id="Jtxt_fonoTatuador" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="Jchb_disponibilidad" min="-2" pref="132" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="Jbtn_guardar_Tatuador" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <Component id="Jtxt_ApellidoTatuador" alignment="0" max="32767" attributes="0"/>
-                      <Component id="Jtxt_correoTaTUADOR" alignment="0" max="32767" attributes="0"/>
-                      <Component id="Jtxt_fonoTatuador" alignment="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="388" max="32767" attributes="0"/>
@@ -87,11 +90,11 @@
                   </Group>
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-              <Component id="Jtxt_disponibilidadTatuador" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+              <Component id="Jchb_disponibilidad" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="Jbtn_guardar_Tatuador" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="87" max="32767" attributes="0"/>
+              <EmptySpace pref="81" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -137,13 +140,16 @@
     </Component>
     <Component class="javax.swing.JButton" name="Jbtn_guardar_Tatuador">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jButton1"/>
+        <Property name="text" type="java.lang.String" value="guardar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Jbtn_guardar_TatuadorActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="Jtxt_disponibilidadTatuador">
+    <Component class="javax.swing.JCheckBox" name="Jchb_disponibilidad">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Disponibilidad"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
