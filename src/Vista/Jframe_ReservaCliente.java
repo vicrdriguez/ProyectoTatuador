@@ -451,6 +451,8 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
     private void jcbox_tatuadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbox_tatuadoresActionPerformed
          //TODO add your handling code here:
          
+         
+         
         try {
             Conexion con = new Conexion();
             Connection cnx = con.obtenerConexion();
@@ -470,7 +472,7 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
             cnx.close();
             
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al cargar tatuadores", "Error Tautadores", 1);
+            JOptionPane.showMessageDialog(null, "Error al cargar tatuadores", "Error Tatuadores", 1);
         }
 //        
 //
