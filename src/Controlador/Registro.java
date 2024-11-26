@@ -102,13 +102,6 @@ public class Registro { //vamos hacer el CRUD
             System.out.println("Error en el metodo cancelar reserva" + e.getMessage());  
             return false; 
         }
-        
-        public boolean buscarCliente(String rut_cliente)
-        {
-            Conexion con = new Conexion();
-            Connection cnx = con.obtenerConexion();
-            String query = "SELECT FROM * Cliente where rut_cliente=?";
-            PreparedStatement stmt = cnx.preparedStatement (query);
-        }
-    }   
+    }    
+       
 }

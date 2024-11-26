@@ -219,12 +219,12 @@ public class Jframe_EliminarCliente extends javax.swing.JFrame {
         
         Registro reg = new Registro();
         
-        DefaultTableModel modelo =  (DefaultTableModel) this.jtbl_SeleccionarUsuario.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) this.jtbl_SeleccionarUsuario.getModel();
         
         modelo.setRowCount(0);
         
-        Cliente cli = reg.
-        if (this.jtxt_buscarCliente == ) {
+        Cliente cli = reg.buscarCliente(rut)
+        if (this.jtxt_buscarCliente == rut) {
                 
             }
         
