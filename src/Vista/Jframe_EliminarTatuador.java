@@ -38,7 +38,7 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
         jbtn_eliminarTatuador = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtbl_seleccionarTatuador = new javax.swing.JTable();
-        jbtn_actualizar = new javax.swing.JButton();
+        jbtn_actualizar2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,7 +80,7 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, true, true
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -93,13 +93,13 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jtbl_seleccionarTatuador);
 
-        jbtn_actualizar.setBackground(new java.awt.Color(127, 127, 159));
-        jbtn_actualizar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        jbtn_actualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icon_Refrescar.png"))); // NOI18N
-        jbtn_actualizar.setText("Actualizar");
-        jbtn_actualizar.addActionListener(new java.awt.event.ActionListener() {
+        jbtn_actualizar2.setBackground(new java.awt.Color(127, 127, 159));
+        jbtn_actualizar2.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        jbtn_actualizar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icon_Refrescar.png"))); // NOI18N
+        jbtn_actualizar2.setText("Actualizar");
+        jbtn_actualizar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtn_actualizarActionPerformed(evt);
+                jbtn_actualizar2ActionPerformed(evt);
             }
         });
 
@@ -122,7 +122,7 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jbtn_actualizar))
+                .addComponent(jbtn_actualizar2))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,7 +132,7 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbtn_actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jbtn_actualizar2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(35, 35, 35))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(25, 25, 25)
@@ -157,7 +157,7 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
         // TODO add your handling code here:
         String rut;
         
-        rut = this.jbtn_eliminarTatuador.getText();
+        rut = this.jtxt_eliminarTatuador.getText();
         
         Registro reg = new Registro();
         
@@ -171,7 +171,7 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jbtn_eliminarTatuadorActionPerformed
 
-    private void jbtn_actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_actualizarActionPerformed
+    private void jbtn_actualizar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_actualizar2ActionPerformed
         // TODO add your handling code here:
         int id;
         String nombre, apellido, rut;
@@ -194,9 +194,9 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
             correo = tat.getCorreo_tatuador();
             disponibilidad = tat.isDisponibilidad();
 
-            modelo.addRow(new Object[]{id, nombre, apellido, rut, fono, correo, disponibilidad});
+            modelo.addRow(new Object[]{id, rut, nombre, apellido});
         }
-    }//GEN-LAST:event_jbtn_actualizarActionPerformed
+    }//GEN-LAST:event_jbtn_actualizar2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -237,7 +237,7 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton jbtn_actualizar;
+    private javax.swing.JButton jbtn_actualizar2;
     private javax.swing.JButton jbtn_eliminarTatuador;
     private javax.swing.JTable jtbl_seleccionarTatuador;
     private javax.swing.JTextField jtxt_eliminarTatuador;

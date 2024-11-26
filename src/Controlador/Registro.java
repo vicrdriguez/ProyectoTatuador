@@ -111,7 +111,7 @@ public class Registro { //vamos hacer el CRUD
             Connection cnx = con.obtenerConexion();
             
             //Consulta de base de dato
-            String consulta = "DELETE FROM ProyectoTatuador.Tatuador WHERE rut_tatuador;";
+            String consulta = "DELETE FROM ProyectoTatuador.Tatuador WHERE rut_tatuador=?;";
             PreparedStatement stmt = cnx.prepareStatement(consulta);
             
             stmt.setString(1,rut_tatuador);
@@ -221,4 +221,11 @@ public class Registro { //vamos hacer el CRUD
         }
         return cli;
     }
+
+    public void ListarTatuador(Tatuador tat) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
+
+
