@@ -78,16 +78,19 @@ public class Registro { //vamos hacer el CRUD
         return lista;   
     }
     
-    public boolean eliminarCliente(int num_cliente)
+
+    public boolean eliminarCliente(String rut_cliente)
+
     {
         try {
             Conexion con = new Conexion();
             Connection cnx = con.obtenerConexion();
 
-            String query = "DELETE FROM proyectoTatuador.Cliente WHERE num_cliente=?";
+
+            String query = "DELETE FROM proyectoTatuador.Cliente WHERE rut_cliente=?";
             PreparedStatement stmt = cnx.prepareStatement(query);
 
-            stmt.setInt(1, num_cliente);
+            stmt.setString(1, rut_cliente);
 
             stmt.executeUpdate();
             stmt.close();
@@ -103,7 +106,12 @@ public class Registro { //vamos hacer el CRUD
             System.out.println("Error en el metodo cancelar reserva" + e.getMessage());  
             return false; 
         }
-    }  
+
+    }    
+       
+
+    }
+
     public boolean AgregarTatuador(Tatuador tatuador)
     {
         try {
@@ -149,4 +157,5 @@ public class Registro { //vamos hacer el CRUD
             return false;
         }
     }
+
 }

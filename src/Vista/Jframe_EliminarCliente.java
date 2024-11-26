@@ -42,11 +42,12 @@ public class Jframe_EliminarCliente extends javax.swing.JFrame {
         panel1 = new java.awt.Panel();
         jbtn_cargarUsuario = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jbtn_buscarReserva = new javax.swing.JButton();
+        jbtn_eliminarReserva = new javax.swing.JButton();
         jtxt_buscarCliente = new javax.swing.JTextField();
         jlabel_busqueda = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtbl_SeleccionarUsuario = new javax.swing.JTable();
+        jbtn_buscarReserva = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -82,10 +83,10 @@ public class Jframe_EliminarCliente extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Cancelacion de Reserva");
 
-        jbtn_buscarReserva.setText("Buscar");
-        jbtn_buscarReserva.addActionListener(new java.awt.event.ActionListener() {
+        jbtn_eliminarReserva.setText("Eliminar");
+        jbtn_eliminarReserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtn_buscarReservaActionPerformed(evt);
+                jbtn_eliminarReservaActionPerformed(evt);
             }
         });
 
@@ -116,60 +117,73 @@ public class Jframe_EliminarCliente extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jtbl_SeleccionarUsuario);
 
+        jbtn_buscarReserva.setText("Buscar");
+        jbtn_buscarReserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_buscarReservaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 54, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(24, 24, 24)
-                                .addComponent(jlabel_busqueda)
-                                .addGap(18, 18, 18)
-                                .addComponent(jtxt_buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(33, 33, 33)
-                                .addComponent(jbtn_buscarReserva))))
+                        .addGap(185, 185, 185)
+                        .addComponent(jbtn_eliminarReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addComponent(jLabel1)))
-                .addContainerGap(66, Short.MAX_VALUE))
+                        .addGap(46, 46, 46)
+                        .addComponent(jlabel_busqueda)
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jtxt_buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(38, 38, 38)
+                                .addComponent(jbtn_buscarReserva))
+                            .addComponent(jLabel1))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(118, 118, 118)
+                .addContainerGap(9, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtxt_buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlabel_busqueda)
                     .addComponent(jbtn_buscarReserva))
-                .addGap(109, 109, 109))
+                .addGap(106, 106, 106)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jbtn_eliminarReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbtn_buscarReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_buscarReservaActionPerformed
+    private void jbtn_eliminarReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_eliminarReservaActionPerformed
         // TODO add your handling code here:
         String rut;
-        int id;
-        String nombre, apellido;
         
-        id = Integer.parseInt(this.jtxt_buscarCliente.getText());
+        //DefaultTableModel modelo = (DefaultTableModel) this.jtbl_SeleccionarUsuario.getModel();
+        
+        rut = this.jtxt_buscarCliente.getText();
         
         Registro reg = new Registro();
+        //modelo.setRowCount(0);
         
         int opcion = JOptionPane.showConfirmDialog(this, "Desea eliminar la reserva?","Eliminar",0);
         
         if (opcion == 0) {
-            reg.eliminarCliente(id);
+            reg.eliminarCliente(rut);
             JOptionPane.showConfirmDialog(null, "Usuario eliminado", "Eliminar", 1);
         } else {
             JOptionPane.showConfirmDialog(null, "Cancelado", "Eliminar", 2);
@@ -188,7 +202,7 @@ public class Jframe_EliminarCliente extends javax.swing.JFrame {
 //            
 //            modelo.addRow(new Object[]{id, rut, nombre, apellido});
 //        }
-    }//GEN-LAST:event_jbtn_buscarReservaActionPerformed
+    }//GEN-LAST:event_jbtn_eliminarReservaActionPerformed
 
     private void jtxt_buscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_buscarClienteActionPerformed
         // TODO add your handling code here:
@@ -197,6 +211,24 @@ public class Jframe_EliminarCliente extends javax.swing.JFrame {
     private void jbtn_cargarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_cargarUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtn_cargarUsuarioActionPerformed
+
+    private void jbtn_buscarReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_buscarReservaActionPerformed
+        // TODO add your handling code here:
+        int id;
+        String rut, nombre, apellido;
+        
+        Registro reg = new Registro();
+        
+        DefaultTableModel modelo = (DefaultTableModel) this.jtbl_SeleccionarUsuario.getModel();
+        
+        modelo.setRowCount(0);
+        
+        Cliente cli = reg.buscarCliente(rut)
+        if (this.jtxt_buscarCliente == rut) {
+                
+            }
+        
+    }//GEN-LAST:event_jbtn_buscarReservaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -241,6 +273,7 @@ public class Jframe_EliminarCliente extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JButton jbtn_buscarReserva;
     private javax.swing.JButton jbtn_cargarUsuario;
+    private javax.swing.JButton jbtn_eliminarReserva;
     private javax.swing.JLabel jlabel_busqueda;
     private javax.swing.JTable jtbl_SeleccionarUsuario;
     private javax.swing.JTextField jtxt_buscarCliente;
