@@ -25,7 +25,7 @@ import javax.swing.JComboBox;
  * @author Vicente
  */
 public class Jframe_ReservaCliente extends javax.swing.JFrame {
-
+        Registro reg = new Registro();
     /**
      * Creates new form Jframe_ReservaCliente
      */
@@ -34,7 +34,7 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
         setSize(796, 543);
         setResizable(true);
         setLocationRelativeTo(null);
-        cargarCombo(jcbox_tatuadores);
+        reg.RellenarCombo("nom_tatuador", jcbox_tatuadores);
     }
 
     /**
@@ -139,6 +139,7 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
 
         jLabel4.setText("Seleccione Tatuador: ");
 
+        jcbox_tatuadores.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Seleccione--" }));
         jcbox_tatuadores.setToolTipText("");
         jcbox_tatuadores.setName(""); // NOI18N
         jcbox_tatuadores.addActionListener(new java.awt.event.ActionListener() {
@@ -452,28 +453,27 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
          //TODO add your handling code here:
          
          
-         
-        try {
-            Conexion con = new Conexion();
-            Connection cnx = con.obtenerConexion();
-            
-            jcbox_tatuadores.removeAllItems(); //remover items 
-            DefaultComboBoxModel tatuadores = new DefaultComboBoxModel();
-            String consulta = "SELECT nom_tatuador FROM proyectoTatuador.Tatuador WHERE disponible = true";
-            PreparedStatement stmt = cnx.prepareStatement(consulta);
-            
-            ResultSet rs = stmt.executeQuery();
-            
-            while (rs.next()){
-                jcbox_tatuadores.addItem(rs.getString(consulta));
-            }
-            rs.close();
-            stmt.close();
-            cnx.close();
-            
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al cargar tatuadores", "Error Tatuadores", 1);
-        }
+//        try {
+//            Conexion con = new Conexion();
+//            Connection cnx = con.obtenerConexion();
+//            
+//            jcbox_tatuadores.removeAllItems(); //remover items 
+//            DefaultComboBoxModel tatuadores = new DefaultComboBoxModel();
+//            String consulta = "SELECT nom_tatuador FROM proyectoTatuador.Tatuador WHERE disponible = true";
+//            PreparedStatement stmt = cnx.prepareStatement(consulta);
+//            
+//            ResultSet rs = stmt.executeQuery();
+//            
+//            while (rs.next()){
+//                jcbox_tatuadores.addItem(rs.getString(consulta));
+//            }
+//            rs.close();
+//            stmt.close();
+//            cnx.close();
+//            
+//        } catch (SQLException e) {
+//            JOptionPane.showMessageDialog(null, "Error al cargar tatuadores", "Error Tatuadores", 1);
+//        }
 //        
 //
     }//GEN-LAST:event_jcbox_tatuadoresActionPerformed

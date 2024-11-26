@@ -10,6 +10,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.ResultSet;
+import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -227,7 +229,24 @@ public class Registro { //vamos hacer el CRUD
     public void ListarTatuador(Tatuador tat) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+      public void RellenarCombo(String valor,JComboBox combo) {
 
+
+        try {
+            String sql = "SELECT "+ valor+ " FROM proyectoTatuador.Tatuador WHERE disponibilidad = true";
+            Conexion con = new Conexion();
+            Connection cnx = con.obtenerConexion();
+            PreparedStatement stmt = cnx.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                combo.addItem(rs.getString(valor));
+            }
+        }
+             catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error" + e.toString());
+        }
+
+    }
 }
 
 
