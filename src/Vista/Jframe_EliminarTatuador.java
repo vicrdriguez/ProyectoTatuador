@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
+
 /**
  *
  * @author josen
@@ -31,6 +32,7 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+
 
         jLabel1 = new javax.swing.JLabel();
         jtxt_eliminarTatuador = new javax.swing.JTextField();
@@ -100,6 +102,7 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
         jbtn_actualizar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtn_actualizar2ActionPerformed(evt);
+
             }
         });
 
@@ -108,6 +111,7 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(51, 51, 51)
@@ -198,6 +202,7 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jbtn_actualizar2ActionPerformed
 
+
     /**
      * @param args the command line arguments
      */
@@ -234,6 +239,7 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -241,5 +247,6 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
     private javax.swing.JButton jbtn_eliminarTatuador;
     private javax.swing.JTable jtbl_seleccionarTatuador;
     private javax.swing.JTextField jtxt_eliminarTatuador;
+
     // End of variables declaration//GEN-END:variables
 }

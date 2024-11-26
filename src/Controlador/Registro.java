@@ -139,7 +139,9 @@ public class Registro { //vamos hacer el CRUD
             Connection cnx = con.obtenerConexion();
             
             //Consulta de base de dato
+
             String consulta = "INSERT INTO Tatuador(rut_Tatuador, nom_tatuador, ap_tatuador, correo_tatuador, fono_tatuador,disponibilidad) VALUES(?,?,?,?,?,?);";
+
             PreparedStatement stmt = cnx.prepareStatement(consulta);
             stmt.setString(1, tatuador.getRut_tatuador());
             stmt.setString(2, tatuador.getNom_tatuador());

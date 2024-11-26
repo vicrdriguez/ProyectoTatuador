@@ -26,7 +26,16 @@ public class Jframe_Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        FondoMenu = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmn_menu = new javax.swing.JMenu();
         jmn_reservarCliente = new javax.swing.JMenuItem();
@@ -39,17 +48,85 @@ public class Jframe_Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("X");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Ink special 2.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, 205, -1));
+
+        jPanel1.setBackground(new java.awt.Color(199, 166, 75));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI Emoji", 1, 18)); // NOI18N
+        jLabel2.setText("Tatuadora Chamo kevin");
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono_chamo.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(62, 62, 62))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(19, 19, 19))
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 350, 110));
+
+        jButton2.setBackground(new java.awt.Color(173, 216, 230));
+        jButton2.setText("Eliminar Reserva");
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 140, 70));
+
+        jButton3.setBackground(new java.awt.Color(173, 216, 230));
+        jButton3.setText("Reservar Cliente");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 30, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, 120, 70));
 
-        jMenuBar1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton4.setBackground(new java.awt.Color(173, 216, 230));
+        jButton4.setText("Agregar Tatuador");
+        jButton4.setPreferredSize(new java.awt.Dimension(115, 23));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 120, 70));
+
+        jButton5.setBackground(new java.awt.Color(173, 216, 230));
+        jButton5.setText("Actualizar Reserva");
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 140, 70));
+
+        jButton6.setBackground(new java.awt.Color(173, 216, 230));
+        jButton6.setText("Actualizar perfil");
+        jButton6.setMaximumSize(new java.awt.Dimension(115, 23));
+        jButton6.setMinimumSize(new java.awt.Dimension(115, 23));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 330, 120, 70));
+
+        FondoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo 3.png"))); // NOI18N
+        FondoMenu.setPreferredSize(new java.awt.Dimension(900, 600));
+        getContentPane().add(FondoMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 570));
+
+        jMenuBar1.setBackground(new java.awt.Color(51, 51, 51));
+        jMenuBar1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jMenuBar1.setAlignmentX(0.3F);
 
+        jmn_menu.setBackground(new java.awt.Color(0, 0, 0));
+        jmn_menu.setBorder(null);
         jmn_menu.setText("Menu");
 
         jmn_reservarCliente.setText("Reservar cliente");
@@ -125,11 +202,6 @@ public class Jframe_Menu extends javax.swing.JFrame {
         eliminar.setVisible(true);
     }//GEN-LAST:event_jmn_eliminarReservaActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem5ActionPerformed
@@ -143,6 +215,14 @@ public class Jframe_Menu extends javax.swing.JFrame {
      Jframe_EliminarTatuador eli_tatto = new Jframe_EliminarTatuador();
         eli_tatto.setVisible(true);
     }//GEN-LAST:event_Jmi_EliminarTatuadorActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,12 +260,21 @@ public class Jframe_Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel FondoMenu;
     private javax.swing.JMenuItem Jmi_AgregarTatuador;
     private javax.swing.JMenuItem Jmi_EliminarTatuador;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuItem jmn_eliminarReserva;
     private javax.swing.JMenu jmn_menu;
     private javax.swing.JMenuItem jmn_reservarCliente;
