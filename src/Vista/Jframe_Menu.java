@@ -31,9 +31,10 @@ public class Jframe_Menu extends javax.swing.JFrame {
         jmn_menu = new javax.swing.JMenu();
         jmn_reservarCliente = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jmn_eliminarReserva = new javax.swing.JMenuItem();
+        Jmi_AgregarTatuador = new javax.swing.JMenuItem();
+        Jmi_EliminarTatuador = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,9 +66,6 @@ public class Jframe_Menu extends javax.swing.JFrame {
         });
         jmn_menu.add(jMenuItem2);
 
-        jMenuItem4.setText("Listar reserva");
-        jmn_menu.add(jMenuItem4);
-
         jMenuItem5.setText("Modificar perfil");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +81,22 @@ public class Jframe_Menu extends javax.swing.JFrame {
             }
         });
         jmn_menu.add(jmn_eliminarReserva);
+
+        Jmi_AgregarTatuador.setText("Agregar Tatuador");
+        Jmi_AgregarTatuador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Jmi_AgregarTatuadorActionPerformed(evt);
+            }
+        });
+        jmn_menu.add(Jmi_AgregarTatuador);
+
+        Jmi_EliminarTatuador.setText("Eliminar Tatuador");
+        Jmi_EliminarTatuador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Jmi_EliminarTatuadorActionPerformed(evt);
+            }
+        });
+        jmn_menu.add(Jmi_EliminarTatuador);
 
         jMenuBar1.add(jmn_menu);
 
@@ -135,6 +149,16 @@ public class Jframe_Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
+    private void Jmi_AgregarTatuadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jmi_AgregarTatuadorActionPerformed
+           Jframe_AgregarTatuador agregar = new Jframe_AgregarTatuador();
+           agregar.setVisible(true);
+    }//GEN-LAST:event_Jmi_AgregarTatuadorActionPerformed
+
+    private void Jmi_EliminarTatuadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jmi_EliminarTatuadorActionPerformed
+     Jframe_EliminarTatuador eli_tatto = new Jframe_EliminarTatuador();
+        eli_tatto.setVisible(true);
+    }//GEN-LAST:event_Jmi_EliminarTatuadorActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -171,10 +195,11 @@ public class Jframe_Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Jmi_AgregarTatuador;
+    private javax.swing.JMenuItem Jmi_EliminarTatuador;
     private javax.swing.JButton jButton1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jmn_eliminarReserva;
     private javax.swing.JMenu jmn_menu;
