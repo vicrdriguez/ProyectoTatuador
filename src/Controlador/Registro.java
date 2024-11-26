@@ -104,7 +104,34 @@ public class Registro { //vamos hacer el CRUD
             return false; 
         }
     }    
-       
+    public boolean EliminarTatuador(String rut_tatuador)
+    {
+        try {
+            Conexion con = new Conexion();
+            Connection cnx = con.obtenerConexion();
+            
+            //Consulta de base de dato
+            String consulta = "DELETE FROM ProyectoTatuador.Tatuador WHERE rut_tatuador;";
+            PreparedStatement stmt = cnx.prepareStatement(consulta);
+            
+            stmt.setString(1,rut_tatuador);
+            
+            stmt.executeUpdate(); //el update cambia el estado de la tabla
+            stmt.close(); // cierras el camino
+            cnx.close();
+            
+            return true;
+            
+        } catch (SQLException e) {
+            System.out.println("Error en SQL al eliminar tatuador" + e.getMessage());
+            return false;
+        }
+        catch (Exception e) {
+            System.out.println("Error en el metodo cancelar reserva" + e.getMessage());  
+            return false; 
+        }
+    }
+    
     public boolean AgregarTatuador(Tatuador tatuador)
     {
         try {
@@ -131,26 +158,42 @@ public class Registro { //vamos hacer el CRUD
         }
     }
     
-    public boolean EliminarTatuador(String rut_tatuador)
-    {
+
+    
+    public ArrayList<Tatuador> ListarTatuador(){
+        ArrayList<Tatuador> listaTatuador = new ArrayList<>();
+        
         try {
             Conexion con = new Conexion();
             Connection cnx = con.obtenerConexion();
             
-            //Consulta de base de dato
-            String consulta = "DELETE FROM ProyectoTatuador.Tatuador WHERE rut_tatuador;";
-            PreparedStatement stmt = cnx.prepareStatement(consulta);
-            stmt.setString(1,rut_tatuador);
-            stmt.executeUpdate(); //el update cambia el estado de la tabla
-            stmt.close(); // cierras el camino
-            cnx.close();
+            String query = "SELECT * FROM proyectotatuador.tatuador;";
+            PreparedStatement stmt = cnx.prepareCall(query);
             
-            return true;
+            ResultSet rs = stmt.executeQuery();
+            
+            while (rs.next()) {
+                Tatuador tat = new Tatuador();
+                tat.setNum_tatuador(rs.getInt("num_tatuador"));
+                tat.setRut_tatuador(rs.getString("rut_tatuador"));
+                tat.setNom_tatuador(rs.getString("nom_tatuador"));
+                tat.setAp_tatuador(rs.getString("ap_tatuador"));
+                tat.setCorreo_tatuador(rs.getString("correo_tatuador"));
+                tat.setFono_tatuador(rs.getInt("fono_tatuador"));
+                tat.setDisponibilidad(rs.getBoolean("disponibilidad"));
+                
+                listaTatuador.add(tat);
+            }
+            rs.close();
+            stmt.close();
+            cnx.close();
         } catch (SQLException e) {
-            System.out.println("Error en la consulta SQL para insertar datos" + e.getMessage());
-            return false;
+            System.out.println("Error en la consulta SQL para revisar los tatuadores "+ e.getMessage());
         }
+        return listaTatuador;
     }
+    
+    
     
     public Cliente buscarCliente(String rut_cliente)
     {

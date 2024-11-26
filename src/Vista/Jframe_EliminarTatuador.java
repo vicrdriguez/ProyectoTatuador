@@ -4,6 +4,12 @@
  */
 package Vista;
 
+import Controlador.Registro;
+import Modelo.Tatuador;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author josen
@@ -26,21 +32,171 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jtxt_eliminarTatuador = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jbtn_eliminarTatuador = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtbl_seleccionarTatuador = new javax.swing.JTable();
+        jbtn_actualizar = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("ELIMINAR TATUADOR");
+
+        jtxt_eliminarTatuador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxt_eliminarTatuadorActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Ingrese RUT del tatuador");
+
+        jbtn_eliminarTatuador.setText("Eliminar");
+        jbtn_eliminarTatuador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_eliminarTatuadorActionPerformed(evt);
+            }
+        });
+
+        jtbl_seleccionarTatuador.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "ID", "RUT", "Nombre", "Apellido"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jtbl_seleccionarTatuador);
+
+        jbtn_actualizar.setBackground(new java.awt.Color(127, 127, 159));
+        jbtn_actualizar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        jbtn_actualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icon_Refrescar.png"))); // NOI18N
+        jbtn_actualizar.setText("Actualizar");
+        jbtn_actualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_actualizarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 464, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1)
+                            .addComponent(jtxt_eliminarTatuador)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(74, 74, 74)
+                        .addComponent(jbtn_eliminarTatuador)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jbtn_actualizar))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 338, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jbtn_actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel1)
+                        .addGap(33, 33, 33)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jtxt_eliminarTatuador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbtn_eliminarTatuador)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jtxt_eliminarTatuadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_eliminarTatuadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxt_eliminarTatuadorActionPerformed
+
+    private void jbtn_eliminarTatuadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_eliminarTatuadorActionPerformed
+        // TODO add your handling code here:
+        String rut;
+        
+        rut = this.jbtn_eliminarTatuador.getText();
+        
+        Registro reg = new Registro();
+        
+        int opcion = JOptionPane.showConfirmDialog(this, "¿Desea eliminar el tatuador?","Eliminar",0);
+        
+        if (opcion == 0) {
+            reg.EliminarTatuador(rut);
+            JOptionPane.showConfirmDialog(null, "Tatuador eliminado", "Eliminar", 1);
+        } else {
+            JOptionPane.showConfirmDialog(null, "Cancelado", "Eliminar", 2);
+        }
+    }//GEN-LAST:event_jbtn_eliminarTatuadorActionPerformed
+
+    private void jbtn_actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_actualizarActionPerformed
+        // TODO add your handling code here:
+        int id;
+        String nombre, apellido, rut;
+        int fono;
+        String correo;
+        boolean disponibilidad;
+
+        Registro reg = new Registro();
+        DefaultTableModel modelo = (DefaultTableModel) this.jtbl_seleccionarTatuador.getModel();
+
+        modelo.setRowCount(0);
+
+        ArrayList<Tatuador> lista = reg.ListarTatuador();
+        for (Tatuador tat : lista) {
+            id = tat.getNum_tatuador();
+            nombre = tat.getNom_tatuador();
+            apellido = tat.getAp_tatuador();
+            rut = tat.getRut_tatuador();
+            fono = tat.getFono_tatuador();
+            correo = tat.getCorreo_tatuador();
+            disponibilidad = tat.isDisponibilidad();
+
+            modelo.addRow(new Object[]{id, nombre, apellido, rut, fono, correo, disponibilidad});
+        }
+    }//GEN-LAST:event_jbtn_actualizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +234,12 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton jbtn_actualizar;
+    private javax.swing.JButton jbtn_eliminarTatuador;
+    private javax.swing.JTable jtbl_seleccionarTatuador;
+    private javax.swing.JTextField jtxt_eliminarTatuador;
     // End of variables declaration//GEN-END:variables
 }
