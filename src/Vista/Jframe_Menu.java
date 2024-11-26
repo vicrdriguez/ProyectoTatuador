@@ -26,12 +26,13 @@ public class Jframe_Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         FondoMenu = new javax.swing.JLabel();
@@ -47,53 +48,74 @@ public class Jframe_Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Emoji", 1, 36)); // NOI18N
-        jLabel2.setText("Super tatto");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Ink special 2.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, 205, -1));
+
+        jPanel1.setBackground(new java.awt.Color(199, 166, 75));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI Emoji", 1, 18)); // NOI18N
+        jLabel2.setText("Tatuadora Chamo kevin");
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono_chamo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(158, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(96, 96, 96))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(62, 62, 62))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(28, 28, 28))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(19, 19, 19))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 510, 100));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 350, 110));
 
-        jButton2.setBackground(new java.awt.Color(153, 255, 153));
+        jButton2.setBackground(new java.awt.Color(173, 216, 230));
         jButton2.setText("Eliminar Reserva");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 140, 40));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 140, 70));
 
-        jButton3.setBackground(new java.awt.Color(153, 255, 153));
+        jButton3.setBackground(new java.awt.Color(173, 216, 230));
         jButton3.setText("Reservar Cliente");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, 140, 40));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, 120, 70));
 
-        jButton4.setBackground(new java.awt.Color(153, 255, 153));
+        jButton4.setBackground(new java.awt.Color(173, 216, 230));
         jButton4.setText("Agregar Tatuador");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, 140, 40));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 340, -1, -1));
+        jButton4.setPreferredSize(new java.awt.Dimension(115, 23));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 120, 70));
 
-        jButton5.setBackground(new java.awt.Color(153, 255, 153));
+        jButton5.setBackground(new java.awt.Color(173, 216, 230));
         jButton5.setText("Actualizar Reserva");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, 140, 40));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 140, 70));
 
-        jButton6.setBackground(new java.awt.Color(153, 255, 153));
+        jButton6.setBackground(new java.awt.Color(173, 216, 230));
         jButton6.setText("Actualizar perfil");
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 140, 40));
+        jButton6.setMaximumSize(new java.awt.Dimension(115, 23));
+        jButton6.setMinimumSize(new java.awt.Dimension(115, 23));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 330, 120, 70));
 
         FondoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo 3.png"))); // NOI18N
         FondoMenu.setPreferredSize(new java.awt.Dimension(900, 600));
@@ -198,6 +220,10 @@ public class Jframe_Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -242,12 +268,13 @@ public class Jframe_Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JMenuItem jmn_eliminarReserva;
     private javax.swing.JMenu jmn_menu;
     private javax.swing.JMenuItem jmn_reservarCliente;
