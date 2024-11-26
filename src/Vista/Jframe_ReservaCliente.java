@@ -23,8 +23,8 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
      */
     public Jframe_ReservaCliente() {
         initComponents();
-        setSize(900, 600);
-        setResizable(false);
+        setSize(796, 543);
+        setResizable(true);
         setLocationRelativeTo(null);
     }
 
@@ -53,6 +53,10 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         Jtxt_correo = new javax.swing.JTextField();
         Jbtn_guardar = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        Jbtn_Eliminar_cita = new javax.swing.JButton();
+        Jbtn_Regresar_menu = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtbl_listarClientes = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
@@ -63,11 +67,14 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAutoRequestFocus(false);
         setBackground(new java.awt.Color(153, 153, 0));
 
+        jPanel2.setBackground(new java.awt.Color(92, 94, 117));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Reservar cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Symbol", 0, 36))); // NOI18N
 
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nombre:");
 
         Jtxt_nombre.setToolTipText("");
@@ -77,8 +84,12 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Apellido :");
 
+        jLabel6.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Rut :");
 
         Jtxt_rut.addActionListener(new java.awt.event.ActionListener() {
@@ -87,6 +98,8 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Fono :");
 
         Jtxt_Fono.addActionListener(new java.awt.event.ActionListener() {
@@ -95,6 +108,8 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Correo electronico :");
 
         Jtxt_correo.addActionListener(new java.awt.event.ActionListener() {
@@ -103,6 +118,7 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
             }
         });
 
+        Jbtn_guardar.setBackground(new java.awt.Color(127, 127, 159));
         Jbtn_guardar.setText("Guardar");
         Jbtn_guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,9 +183,55 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(Jtxt_correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Jbtn_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+        );
+
+        jPanel1.setBackground(new java.awt.Color(92, 94, 117));
+        jPanel1.setForeground(new java.awt.Color(51, 204, 255));
+        jPanel1.setToolTipText("");
+
+        Jbtn_Eliminar_cita.setBackground(new java.awt.Color(127, 127, 159));
+        Jbtn_Eliminar_cita.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Jbtn_Eliminar_cita.setText("Eliminar cita");
+        Jbtn_Eliminar_cita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Jbtn_Eliminar_citaActionPerformed(evt);
+            }
+        });
+
+        Jbtn_Regresar_menu.setBackground(new java.awt.Color(127, 127, 159));
+        Jbtn_Regresar_menu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Jbtn_Regresar_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icon_Return.png"))); // NOI18N
+        Jbtn_Regresar_menu.setText("Regresar");
+        Jbtn_Regresar_menu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Jbtn_Regresar_menuActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Jbtn_Eliminar_cita)
+                .addGap(119, 119, 119))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Jbtn_Regresar_menu)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(Jbtn_Eliminar_cita, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Jbtn_Regresar_menu, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jtbl_listarClientes.setModel(new javax.swing.table.DefaultTableModel(
@@ -213,12 +275,45 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setText("Citas Pendientes");
 
+        jbtn_actualizar.setBackground(new java.awt.Color(127, 127, 159));
+        jbtn_actualizar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        jbtn_actualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icon_Refrescar.png"))); // NOI18N
         jbtn_actualizar.setText("Actualizar");
         jbtn_actualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtn_actualizarActionPerformed(evt);
             }
         });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jbtn_actualizar)
+                        .addGap(45, 45, 45)
+                        .addComponent(jLabel1)))
+                .addGap(0, 9, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jbtn_actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -227,68 +322,46 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(139, 139, 139))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jbtn_actualizar)
-                .addGap(197, 197, 197))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(26, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jbtn_actualizar)
-                .addGap(0, 33, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Jtxt_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jtxt_nombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Jtxt_nombreActionPerformed
-
-    private void Jtxt_rutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jtxt_rutActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Jtxt_rutActionPerformed
-
     private void Jbtn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jbtn_guardarActionPerformed
-//         TODO add your handling code here:
-             
+        //         TODO add your handling code here:
+
         //capturar datos
-        
+
         String Nombre, Apellido,Correo, Rut;
         int  Fono;
-        
-   
+
         Nombre = this.Jtxt_nombre.getText();
         Apellido = this.Jtxt_Apellido.getText();
         Rut = this.Jtxt_rut.getText();
         Fono = Integer.parseInt(this.Jtxt_Fono.getText());
         Correo = this.Jtxt_correo.getText();
-        
+
         Cliente cliente = new Cliente(0, Rut, Nombre, Apellido, Fono, Correo);
         Registro reg = new Registro();
-        
+
         reg.agregarCliente(cliente);
 
         JOptionPane.showMessageDialog(null, "Reserva de tatuaje realizado con exito!", "Ingreso", 1);
- 
-         
+
     }//GEN-LAST:event_Jbtn_guardarActionPerformed
 
     private void Jtxt_correoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jtxt_correoActionPerformed
@@ -299,18 +372,26 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Jtxt_FonoActionPerformed
 
+    private void Jtxt_rutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jtxt_rutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Jtxt_rutActionPerformed
+
+    private void Jtxt_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jtxt_nombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Jtxt_nombreActionPerformed
+
     private void jbtn_actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_actualizarActionPerformed
         // TODO add your handling code here:
         int id;
         String nombre, apellido, rut;
         int fono;
         String correo;
-        
+
         Registro reg = new Registro();
         DefaultTableModel modelo = (DefaultTableModel) this.jtbl_listarClientes.getModel();
-        
+
         modelo.setRowCount(0);
-        
+
         ArrayList<Cliente> lista = reg.ListarCliente();
         for (Cliente cli : lista) {
             id = cli.getNum_cliente();
@@ -319,10 +400,24 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
             rut = cli.getRut_cliente();
             fono = cli.getFono_cliente();
             correo = cli.getCorreo_cliente();
-            
+
             modelo.addRow(new Object[]{id, nombre, apellido, rut, fono, correo});
         }
     }//GEN-LAST:event_jbtn_actualizarActionPerformed
+
+    private void Jbtn_Eliminar_citaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jbtn_Eliminar_citaActionPerformed
+        // TODO add your handling code here:
+
+        Jframe_EliminarCliente eliminar_cliente = new Jframe_EliminarCliente();
+        eliminar_cliente.setVisible(true);
+    }//GEN-LAST:event_Jbtn_Eliminar_citaActionPerformed
+
+    private void Jbtn_Regresar_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jbtn_Regresar_menuActionPerformed
+        // TODO add your handling code here:
+        this.hide();
+        Jframe_ReservaCliente reserva = new Jframe_ReservaCliente();
+        reserva.setVisible(false);
+    }//GEN-LAST:event_Jbtn_Regresar_menuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -360,6 +455,8 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Jbtn_Eliminar_cita;
+    private javax.swing.JButton Jbtn_Regresar_menu;
     private javax.swing.JButton Jbtn_guardar;
     private javax.swing.JTextField Jtxt_Apellido;
     private javax.swing.JTextField Jtxt_Fono;
@@ -375,7 +472,9 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbtn_actualizar;
