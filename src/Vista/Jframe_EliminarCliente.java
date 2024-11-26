@@ -44,10 +44,10 @@ public class Jframe_EliminarCliente extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jbtn_eliminarReserva = new javax.swing.JButton();
         jtxt_buscarCliente = new javax.swing.JTextField();
-        jlabel_busqueda = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtbl_SeleccionarUsuario = new javax.swing.JTable();
         jbtn_buscarReserva = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -96,9 +96,6 @@ public class Jframe_EliminarCliente extends javax.swing.JFrame {
             }
         });
 
-        jlabel_busqueda.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jlabel_busqueda.setText("Busqueda:");
-
         jtbl_SeleccionarUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null}
@@ -117,53 +114,58 @@ public class Jframe_EliminarCliente extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jtbl_SeleccionarUsuario);
 
-        jbtn_buscarReserva.setText("Buscar");
+        jbtn_buscarReserva.setText("Actualizar");
         jbtn_buscarReserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtn_buscarReservaActionPerformed(evt);
             }
         });
 
+        jLabel2.setText("ingrese el rut");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 54, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(185, 185, 185)
+                        .addGap(131, 131, 131)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(181, 181, 181)
                         .addComponent(jbtn_eliminarReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(jlabel_busqueda)
-                        .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jtxt_buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(38, 38, 38)
-                                .addComponent(jbtn_buscarReserva))
-                            .addComponent(jLabel1))))
+                        .addGap(156, 156, 156)
+                        .addComponent(jtxt_buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(192, 192, 192)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(192, 192, 192)
+                        .addComponent(jbtn_buscarReserva)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 56, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(9, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtxt_buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jlabel_busqueda)
-                    .addComponent(jbtn_buscarReserva))
-                .addGap(106, 106, 106)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbtn_buscarReserva)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addGap(7, 7, 7)
+                .addComponent(jtxt_buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jbtn_eliminarReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
+                .addGap(28, 28, 28))
         );
 
         pack();
@@ -215,19 +217,25 @@ public class Jframe_EliminarCliente extends javax.swing.JFrame {
     private void jbtn_buscarReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_buscarReservaActionPerformed
         // TODO add your handling code here:
         int id;
-        String rut, nombre, apellido;
-        
+        String rut;
+        String nombre, apellido;
+        rut = this.jtxt_buscarCliente.getText();
+
         Registro reg = new Registro();
-        
+
         DefaultTableModel modelo = (DefaultTableModel) this.jtbl_SeleccionarUsuario.getModel();
-        
+
         modelo.setRowCount(0);
-        
-        Cliente cli = reg.buscarCliente(rut)
-        if (this.jtxt_buscarCliente == rut) {
-                
-            }
-        
+
+        ArrayList<Cliente> lista = reg.ListarCliente();
+        for (Cliente cli : lista) {
+            id = cli.getNum_cliente();
+            rut = cli.getRut_cliente();
+            nombre = cli.getNom_cliente();
+            apellido = cli.getAp_cliente();
+
+            modelo.addRow(new Object[]{id, rut, nombre, apellido});
+        }
     }//GEN-LAST:event_jbtn_buscarReservaActionPerformed
 
     /**
@@ -267,6 +275,7 @@ public class Jframe_EliminarCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
@@ -274,7 +283,6 @@ public class Jframe_EliminarCliente extends javax.swing.JFrame {
     private javax.swing.JButton jbtn_buscarReserva;
     private javax.swing.JButton jbtn_cargarUsuario;
     private javax.swing.JButton jbtn_eliminarReserva;
-    private javax.swing.JLabel jlabel_busqueda;
     private javax.swing.JTable jtbl_SeleccionarUsuario;
     private javax.swing.JTextField jtxt_buscarCliente;
     private java.awt.List list1;

@@ -155,6 +155,7 @@ public class Registro { //vamos hacer el CRUD
     public Cliente buscarCliente(String rut_cliente)
     {
         Cliente cli = new Cliente();
+        ArrayList<Cliente> lista = new ArrayList<>();
         try {
             Conexion con = new Conexion();
             Connection cnx = con.obtenerConexion();
