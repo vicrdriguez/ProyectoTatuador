@@ -109,6 +109,11 @@ public class Jframe_Menu extends javax.swing.JFrame {
 
         jButton5.setBackground(new java.awt.Color(173, 216, 230));
         jButton5.setText("Actualizar Reserva");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 140, 70));
 
         jButton6.setBackground(new java.awt.Color(173, 216, 230));
@@ -227,6 +232,13 @@ public class Jframe_Menu extends javax.swing.JFrame {
 
         
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        
+        Jframe_ModificarDtos modi = new Jframe_ModificarDtos();
+        modi.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments

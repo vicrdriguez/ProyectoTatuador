@@ -247,6 +247,65 @@ public class Registro { //vamos hacer el CRUD
         }
 
     }
+        public boolean ActualizarTatto(String nombre, String apellido,String correo, int fono,boolean disponibilidad){
+            try {
+                
+            Conexion con = new Conexion();
+            Connection cnx = con.obtenerConexion();
+            
+            String query = "UPDATE proyectoTatuador.Tatuador set nom_tatuador=?, ap_tatuador=?, correo_tatuador=?, fono_tatuador=?,disponibilidad=?";
+            PreparedStatement stmt = cnx.prepareStatement(query);
+            stmt.setString(1, nombre);
+            stmt.setString(2, apellido);
+            stmt.setString(3, correo);
+            stmt.setInt(4, fono);
+            stmt.setBoolean(5, disponibilidad);
+            
+            stmt.executeUpdate();
+            stmt.close();
+            cnx.close();
+            return true;
+            } catch (SQLException e) {
+                System.out.println("error en el SQL al actualizar libro "+e.getMessage());
+            return false;
+            }
+            catch (Exception e) {
+                System.out.println("error en el metodo al actualizar libro "+e.getMessage());
+            return false;}
+        }
+        
+        
+        public Tatuador buscarTatuador(String rut_tatuador)
+    {
+        Tatuador tatuadore = new Tatuador();
+        try {
+            Conexion con = new Conexion();
+            Connection cnx = con.obtenerConexion();
+
+            String query = "SELECT * FROM Tatuador WHERE rut_tatuador=?";
+            PreparedStatement stmt = cnx.prepareStatement(query);
+            stmt.setString(1, rut_tatuador);
+
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                tatuadore.setRut_tatuador(rs.getString("rut_tatuador"));
+                tatuadore.setNom_tatuador(rs.getString("nom_tatuador"));
+                tatuadore.setAp_tatuador(rs.getString("ap_tatuador"));
+                tatuadore.setCorreo_tatuador(rs.getString("correo_tatuador"));
+                tatuadore.setFono_tatuador(rs.getInt("fono_tatuador"));
+                
+                
+            }
+            
+            rs.close();
+            stmt.close();
+            cnx.close();
+        } catch (SQLException e) {
+            System.out.println("Error en SQL al buscar tatuador por el rut" + e.getMessage());
+        }
+        return tatuadore;
+    }
 }
 
 

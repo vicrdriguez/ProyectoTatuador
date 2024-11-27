@@ -176,14 +176,11 @@ public class Jframe_AgregarTatuador extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel2)
                                     .addComponent(Jtxt_rut_tatuador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(33, 33, 33)
-                                        .addComponent(jLabel1))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(Jtxt_nombre_tatuador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(26, 26, 26)
+                                .addGap(30, 30, 30)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel1)
+                                    .addComponent(Jtxt_nombre_tatuador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(23, 23, 23)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(Jtxt_ApellidoTatuador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel3))
@@ -221,9 +218,9 @@ public class Jframe_AgregarTatuador extends javax.swing.JFrame {
         int fono_tatuador;
         boolean disponibilidad;
         
+        rut_tatuador = this.Jtxt_rut_tatuador.getText();
         nom_tatuador = this.Jtxt_nombre_tatuador.getText();
         ap_tatuador = this.Jtxt_ApellidoTatuador.getText();
-        rut_tatuador = this.Jtxt_rut_tatuador.getText();
         correo_tatuador = this.Jtxt_correoTaTUADOR.getText();
         fono_tatuador =Integer.parseInt(this.Jtxt_fonoTatuador.getText());
         disponibilidad = this.Jchb_disponibilidad.isSelected(); //0-1
@@ -252,9 +249,9 @@ public class Jframe_AgregarTatuador extends javax.swing.JFrame {
         ArrayList<Tatuador> lista = reg.ListarTatuador();
         for (Tatuador tat : lista) {
             id = tat.getNum_tatuador();
+            rut = tat.getRut_tatuador();
             nombre = tat.getNom_tatuador();
             apellido = tat.getAp_tatuador();
-            rut = tat.getRut_tatuador();
             fono = tat.getFono_tatuador();
             correo = tat.getCorreo_tatuador();
             disponibilidad = tat.isDisponibilidad();
