@@ -304,6 +304,32 @@ public class Registro { //vamos hacer el CRUD
         }
         return tatuadore;
     }
+        public boolean Actualizarcliente(String nombre, String apellido,String correo, int fono){
+            try {
+                
+            Conexion con = new Conexion();
+            Connection cnx = con.obtenerConexion();
+            
+            String query = "UPDATE proyectoTatuador.Cliente set nom_cliente=?, ap_cliente=?, correo_cliente=?, fono_cliente=?";
+            PreparedStatement stmt = cnx.prepareStatement(query);
+            stmt.setString(1, nombre);
+            stmt.setString(2, apellido);
+            stmt.setString(3, correo);
+            stmt.setInt(4, fono);
+
+            
+            stmt.executeUpdate();
+            stmt.close();
+            cnx.close();
+            return true;
+            } catch (SQLException e) {
+                System.out.println("error en el SQL al actualizar libro "+e.getMessage());
+            return false;
+            }
+            catch (Exception e) {
+                System.out.println("error en el metodo al actualizar libro "+e.getMessage());
+            return false;}
+        }
 }
 
 

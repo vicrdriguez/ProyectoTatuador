@@ -32,7 +32,6 @@ public class Jframe_Menu extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         FondoMenu = new javax.swing.JLabel();
@@ -84,7 +83,7 @@ public class Jframe_Menu extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, 140, 70));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 250, 140, 70));
 
         jButton3.setBackground(new java.awt.Color(173, 216, 230));
         jButton3.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
@@ -94,7 +93,7 @@ public class Jframe_Menu extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 140, 70));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 140, 70));
 
         jButton4.setBackground(new java.awt.Color(173, 216, 230));
         jButton4.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
@@ -107,16 +106,6 @@ public class Jframe_Menu extends javax.swing.JFrame {
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 360, 140, 70));
 
-        jButton5.setBackground(new java.awt.Color(173, 216, 230));
-        jButton5.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        jButton5.setText("Modificar Reserva");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 140, 70));
-
         jButton6.setBackground(new java.awt.Color(173, 216, 230));
         jButton6.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         jButton6.setText("Modificar Perfil");
@@ -127,7 +116,7 @@ public class Jframe_Menu extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 250, 140, 70));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, 140, 70));
 
         jButton1.setBackground(new java.awt.Color(173, 216, 230));
         jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
@@ -258,13 +247,6 @@ public class Jframe_Menu extends javax.swing.JFrame {
         eliminar.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-        Jframe_ModificarDtos1 modificar = new Jframe_ModificarDtos1();
-        modificar.setVisible(true);
-        
-    }//GEN-LAST:event_jButton5ActionPerformed
-
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         Jframe_ModificarDtos1 modi = new  Jframe_ModificarDtos1();
@@ -322,7 +304,6 @@ public class Jframe_Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
