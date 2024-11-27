@@ -266,33 +266,33 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
 
         jtbl_listarClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nombre", "Apellido", "Rut", "Fono", "Correo"
+                "ID", "Nombre", "Apellido", "Rut", "Fono", "Correo", "Tatuador"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, true
+                false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -378,12 +378,18 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
 
         String Nombre, Apellido,Correo, Rut;
         int  Fono;
-
+        
+        if (this.Jtxt_nombre.getText().trim().isEmpty()|| this.Jtxt_Apellido.getText().trim().isEmpty() || this.Jtxt_rut.getText().trim().isEmpty()  || this.Jtxt_correo.getText().trim().isEmpty() ){
+            JOptionPane.showMessageDialog(null, "Falta rellenar campos", "Campos vacio", JOptionPane.WARNING_MESSAGE);
+        }
+        else{
+            
         Nombre = this.Jtxt_nombre.getText();
         Apellido = this.Jtxt_Apellido.getText();
         Rut = this.Jtxt_rut.getText();
-        Fono = Integer.parseInt(this.Jtxt_Fono.getText());
+        Fono = Integer.parseInt(this.Jtxt_Fono.getText()); 
         Correo = this.Jtxt_correo.getText();
+        
 
         Cliente cliente = new Cliente(0, Rut, Nombre, Apellido, Fono, Correo);
         Registro reg = new Registro();
@@ -391,6 +397,8 @@ public class Jframe_ReservaCliente extends javax.swing.JFrame {
         reg.agregarCliente(cliente);
 
         JOptionPane.showMessageDialog(null, "Reserva de tatuaje realizado con exito!", "Ingreso", 1);
+        }
+        
 
     }//GEN-LAST:event_Jbtn_guardarActionPerformed
 
