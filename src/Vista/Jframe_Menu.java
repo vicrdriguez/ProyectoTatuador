@@ -260,15 +260,15 @@ public class Jframe_Menu extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        Jframe_ModificarDtos modificar = new Jframe_ModificarDtos();
+        Jframe_ModificarDtos1 modificar = new Jframe_ModificarDtos1();
         modificar.setVisible(true);
         
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        Jframe_ModicarTatuador modTatuador = new  Jframe_ModicarTatuador();
-        modTatuador.setVisible(true);
+        Jframe_ModificarDtos1 modi = new  Jframe_ModificarDtos1();
+        modi.setVisible(true);
 
         
     }//GEN-LAST:event_jButton6ActionPerformed
