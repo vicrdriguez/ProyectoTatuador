@@ -15,6 +15,9 @@ public class Jframe_ModificarDtos extends javax.swing.JFrame {
      */
     public Jframe_ModificarDtos() {
         initComponents();
+        setSize(796, 543);
+        setResizable(false);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -32,6 +35,7 @@ public class Jframe_ModificarDtos extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
+        Jbtn_Regresar_menu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,6 +50,16 @@ public class Jframe_ModificarDtos extends javax.swing.JFrame {
         jTextField3.setText("jTextField3");
 
         jTextField4.setText("jTextField4");
+
+        Jbtn_Regresar_menu.setBackground(new java.awt.Color(127, 127, 159));
+        Jbtn_Regresar_menu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Jbtn_Regresar_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icon_Return.png"))); // NOI18N
+        Jbtn_Regresar_menu.setText("Regresar");
+        Jbtn_Regresar_menu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Jbtn_Regresar_menuActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -70,6 +84,10 @@ public class Jframe_ModificarDtos extends javax.swing.JFrame {
                             .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1))))
                 .addGap(67, 67, 67))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(Jbtn_Regresar_menu)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,7 +107,9 @@ public class Jframe_ModificarDtos extends javax.swing.JFrame {
                         .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(25, 25, 25)))
                 .addComponent(jButton1)
-                .addGap(69, 69, 69))
+                .addGap(18, 18, 18)
+                .addComponent(Jbtn_Regresar_menu, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
 
         pack();
@@ -98,6 +118,13 @@ public class Jframe_ModificarDtos extends javax.swing.JFrame {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void Jbtn_Regresar_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jbtn_Regresar_menuActionPerformed
+        // TODO add your handling code here:
+        this.hide();
+        Jframe_ReservaCliente reserva = new Jframe_ReservaCliente();
+        reserva.setVisible(false);
+    }//GEN-LAST:event_Jbtn_Regresar_menuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -135,6 +162,7 @@ public class Jframe_ModificarDtos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Jbtn_Regresar_menu;
     private javax.swing.JButton jButton1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;

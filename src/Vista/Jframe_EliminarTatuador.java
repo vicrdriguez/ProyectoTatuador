@@ -22,6 +22,9 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
      */
     public Jframe_EliminarTatuador() {
         initComponents();
+        setSize(796, 543);
+        setResizable(false);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -33,7 +36,6 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-
         jLabel1 = new javax.swing.JLabel();
         jtxt_eliminarTatuador = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -41,8 +43,7 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jtbl_seleccionarTatuador = new javax.swing.JTable();
         jbtn_actualizar2 = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        Jbtn_Regresar_menu1 = new javax.swing.JButton();
 
         jLabel1.setText("ELIMINAR TATUADOR");
 
@@ -102,7 +103,16 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
         jbtn_actualizar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtn_actualizar2ActionPerformed(evt);
+            }
+        });
 
+        Jbtn_Regresar_menu1.setBackground(new java.awt.Color(127, 127, 159));
+        Jbtn_Regresar_menu1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Jbtn_Regresar_menu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icon_Return.png"))); // NOI18N
+        Jbtn_Regresar_menu1.setText("Regresar");
+        Jbtn_Regresar_menu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Jbtn_Regresar_menu1ActionPerformed(evt);
             }
         });
 
@@ -111,7 +121,6 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(51, 51, 51)
@@ -125,29 +134,31 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(24, 24, 24)
+                .addComponent(Jbtn_Regresar_menu1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jbtn_actualizar2))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbtn_actualizar2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel1)
-                        .addGap(33, 33, 33)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jtxt_eliminarTatuador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbtn_eliminarTatuador)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbtn_actualizar2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel1)
+                .addGap(33, 33, 33)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jtxt_eliminarTatuador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jbtn_eliminarTatuador)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Jbtn_Regresar_menu1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
         );
 
         pack();
@@ -202,6 +213,13 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jbtn_actualizar2ActionPerformed
 
+    private void Jbtn_Regresar_menu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jbtn_Regresar_menu1ActionPerformed
+        // TODO add your handling code here:
+        this.hide();
+        Jframe_EliminarTatuador reserva = new Jframe_EliminarTatuador();
+        reserva.setVisible(false);
+    }//GEN-LAST:event_Jbtn_Regresar_menu1ActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -239,7 +257,7 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-
+    private javax.swing.JButton Jbtn_Regresar_menu1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -247,6 +265,5 @@ public class Jframe_EliminarTatuador extends javax.swing.JFrame {
     private javax.swing.JButton jbtn_eliminarTatuador;
     private javax.swing.JTable jtbl_seleccionarTatuador;
     private javax.swing.JTextField jtxt_eliminarTatuador;
-
     // End of variables declaration//GEN-END:variables
 }

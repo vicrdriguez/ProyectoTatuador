@@ -29,19 +29,19 @@ public class Jframe_Menu extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         FondoMenu = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmn_menu = new javax.swing.JMenu();
         jmn_reservarCliente = new javax.swing.JMenuItem();
+        jmn_eliminarReserva = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jmn_eliminarReserva = new javax.swing.JMenuItem();
         Jmi_AgregarTatuador = new javax.swing.JMenuItem();
         Jmi_EliminarTatuador = new javax.swing.JMenuItem();
 
@@ -54,21 +54,17 @@ public class Jframe_Menu extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(199, 166, 75));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Emoji", 1, 18)); // NOI18N
-        jLabel2.setText("Tatuadora Chamo kevin");
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono_chamo.png"))); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Snap ITC", 1, 40)); // NOI18N
+        jLabel2.setText("Tatuatesta");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(62, 62, 62))
+                .addGap(34, 34, 34)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -76,28 +72,32 @@ public class Jframe_Menu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(19, 19, 19))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 350, 110));
 
         jButton2.setBackground(new java.awt.Color(173, 216, 230));
+        jButton2.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         jButton2.setText("Eliminar Reserva");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 140, 70));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, 140, 70));
 
         jButton3.setBackground(new java.awt.Color(173, 216, 230));
-        jButton3.setText("Reservar Cliente");
+        jButton3.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jButton3.setText("Agendar Reserva");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, 120, 70));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 140, 70));
 
         jButton4.setBackground(new java.awt.Color(173, 216, 230));
+        jButton4.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         jButton4.setText("Agregar Tatuador");
         jButton4.setPreferredSize(new java.awt.Dimension(115, 23));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -105,17 +105,39 @@ public class Jframe_Menu extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 120, 70));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 360, 140, 70));
 
         jButton5.setBackground(new java.awt.Color(173, 216, 230));
-        jButton5.setText("Actualizar Reserva");
+        jButton5.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jButton5.setText("Modificar Reserva");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 140, 70));
 
         jButton6.setBackground(new java.awt.Color(173, 216, 230));
-        jButton6.setText("Actualizar perfil");
+        jButton6.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jButton6.setText("Modificar Perfil");
         jButton6.setMaximumSize(new java.awt.Dimension(115, 23));
         jButton6.setMinimumSize(new java.awt.Dimension(115, 23));
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 330, 120, 70));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 250, 140, 70));
+
+        jButton1.setBackground(new java.awt.Color(173, 216, 230));
+        jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jButton1.setText("Eliminar Tatuador");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 360, 140, 70));
 
         FondoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo 3.png"))); // NOI18N
         FondoMenu.setPreferredSize(new java.awt.Dimension(900, 600));
@@ -129,13 +151,21 @@ public class Jframe_Menu extends javax.swing.JFrame {
         jmn_menu.setBorder(null);
         jmn_menu.setText("Menu");
 
-        jmn_reservarCliente.setText("Reservar cliente");
+        jmn_reservarCliente.setText("Agendar Reserva");
         jmn_reservarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jmn_reservarClienteActionPerformed(evt);
             }
         });
         jmn_menu.add(jmn_reservarCliente);
+
+        jmn_eliminarReserva.setText("Eliminar reserva");
+        jmn_eliminarReserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmn_eliminarReservaActionPerformed(evt);
+            }
+        });
+        jmn_menu.add(jmn_eliminarReserva);
 
         jMenuItem2.setText("Modificar reserva");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -152,14 +182,6 @@ public class Jframe_Menu extends javax.swing.JFrame {
             }
         });
         jmn_menu.add(jMenuItem5);
-
-        jmn_eliminarReserva.setText("Eliminar reserva");
-        jmn_eliminarReserva.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmn_eliminarReservaActionPerformed(evt);
-            }
-        });
-        jmn_menu.add(jmn_eliminarReserva);
 
         Jmi_AgregarTatuador.setText("Agregar Tatuador");
         Jmi_AgregarTatuador.addActionListener(new java.awt.event.ActionListener() {
@@ -213,20 +235,48 @@ public class Jframe_Menu extends javax.swing.JFrame {
 
     private void Jmi_EliminarTatuadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jmi_EliminarTatuadorActionPerformed
      Jframe_EliminarTatuador eli_tatto = new Jframe_EliminarTatuador();
-        eli_tatto.setVisible(true);
+       eli_tatto.setVisible(true);
     }//GEN-LAST:event_Jmi_EliminarTatuadorActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-                Jframe_ReservaCliente reserva = new Jframe_ReservaCliente();
+        Jframe_ReservaCliente reserva = new Jframe_ReservaCliente();
         reserva.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        Jframe_AgregarTatuador agregar = new Jframe_AgregarTatuador();
+        agregar.setVisible(true);
 
         
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Jframe_EliminarCliente eliminar = new Jframe_EliminarCliente(); // importante q J y _(letra)en mayus
+        eliminar.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        Jframe_ModificarDtos modificar = new Jframe_ModificarDtos();
+        modificar.setVisible(true);
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+//        Jframe_ModificarPerfilTato modificarTato = new Jframe_ModificarPerfilTato();
+//        modificarTato.setVisible(true);
+        
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Jframe_EliminarTatuador eli_tatto = new Jframe_EliminarTatuador();
+        eli_tatto.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -267,6 +317,7 @@ public class Jframe_Menu extends javax.swing.JFrame {
     private javax.swing.JLabel FondoMenu;
     private javax.swing.JMenuItem Jmi_AgregarTatuador;
     private javax.swing.JMenuItem Jmi_EliminarTatuador;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -274,7 +325,6 @@ public class Jframe_Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem5;
