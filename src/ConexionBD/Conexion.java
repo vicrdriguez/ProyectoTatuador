@@ -40,7 +40,10 @@ public class Conexion {
 
     create database proyectoTatuador;
     use proyectoTatuador;
-
+    
+    alter table proyectotatuador.tatuador add unique (rut_tatuador);
+    SET SQL_SAFE_UPDATES = 0;
+    SET SQL_SAFE_UPDATES = 1;
     create table proyectoTatuador.Cliente(
 	num_cliente int not null auto_increment,
 	rut_cliente varchar(10) not null,
