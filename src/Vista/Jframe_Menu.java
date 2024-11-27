@@ -267,8 +267,9 @@ public class Jframe_Menu extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-//        Jframe_ModificarPerfilTato modificarTato = new Jframe_ModificarPerfilTato();
-//        modificarTato.setVisible(true);
+        Jframe_ModicarTatuador modTatuador = new  Jframe_ModicarTatuador();
+        modTatuador.setVisible(true);
+
         
     }//GEN-LAST:event_jButton6ActionPerformed
 

@@ -23,7 +23,7 @@ public class Conexion {
             //deben ponerle asi y hacer las tablas tal cual indica
             //la clave varia dependiendo el usuario del proyecto
           
-            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/ProyectoTatuador", "root", "duocuc");
+            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/ProyectoTatuador", "root", "duoc.2024");
 
             System.out.println("Conexion exitosa!!");
             
